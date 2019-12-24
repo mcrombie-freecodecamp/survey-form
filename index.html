@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link href="../../../css/all-pages.css" rel="stylesheet">
+    <title>CromSurvey Form</title>
+    <style>
+        body {
+            font-size: 1.6rem;
+            color: white;
+        }
+
+        h1 {
+            background-color: red;
+            text-align: center;
+            margin: 3rem 10rem 0 10rem;
+            color: white;
+        }
+
+        .page {
+            width: 80%;
+            margin: 50px auto 0 auto;
+            border: 1px solid black;
+            background-color: cyan;
+        }
+
+        .page__buttons {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        #description {
+            text-align: center;
+            color: red;
+            font-size: 1.8rem;
+            margin: 3rem 10rem 0 10rem;
+        }
+
+        .form {
+            display: inline-block;
+            width: 25rem;
+            margin-left: 20rem;
+            margin-top: 5%;
+        }
+
+        label {
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        h2 {
+            color: white;
+            background-color: red;
+            text-align: center;
+        }
+
+        #email:valid {
+            border: 1px solid blue;
+        }
+
+        #email:invalid {
+            border: 1px solid red;
+        }
+
+        #number:invalid {
+            border: 2px dashed red;
+        }
+
+        #comments {
+            display: block;
+            margin: auto;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        #submit {
+            display: block;
+            margin: auto;
+            width: 4rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div class="navigation">
+            <div class="navigation__back">
+                &nbsp;
+            </div>
+            <a href="../../../" id="page-title" class="navigation__title">
+                CromBlog
+            </a>
+            <input type="checkbox" class="navigation__checkbox" id="navigation-toggle">
+
+            <label for="navigation-toggle" class="navigation__button">
+                <span class="navigation__icon">&nbsp;</span>
+            </label>
+
+            <div class="navigation__background">&nbsp;</div>
+
+            <div class="navigation__nav">
+                <ul class="navigation__list">
+                    <li class="navigation__item"><a href="../../../about/" class="navigation__link">About</a></li>
+                    <li class="navigation__item"><a href="../../../blog/" class="navigation__link">Blog</a></li>
+                    <li class="navigation__item"><a href="../../../contact/" class="navigation__link">Contact</a>
+                    </li>
+                    <li class="navigation__item"><a href="../../../web-development-portfolio/"
+                            class="navigation__link">Web
+                            Development Portfolio</a></li>
+                    <li class="navigation__item"><a href="../../../writing-portfolio/" class="navigation__link">Writing
+                            Portfolio</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="page">
+        <div class="page__content">
+            <div class="page__title">
+                <h1 id="title">Survey Form Color Survey Form</h1>
+            </div>
+            <div class="page__description">
+                <p id="description">I am comparing the visual appeal of complementary colors. What do you think of the
+                    colors on this survey page?</p>
+            </div>
+            <div class="page__buttons">
+                <button class="complementary-color-button" id="button-red-cyan">Red-Cyan</button>
+                <button class="complementary-color-button" id="button-green-magenta">Green-Magenta</button>
+                <button class="complementary-color-button" id="button-blue-yellow">Blue-Yellow</button>
+                <button class="complementary-color-button" id="button-red-green">Red-Green</button>
+                <button class="complementary-color-button" id="button-yellow-purple">Yellow-Purple</button>
+                <button class="complementary-color-button" id="button-orange-blue">Orange-Blue</button>
+            </div>
+
+            <div class="form">
+                <form action="/results" id="survey-form">
+                    <h2>Personal Information</h2>
+                    <label id="name-label">Name
+                        <input id="name" type="text" placeholder="name" required>
+                    </label>
+                    <label id="email-label">Email
+                        <input id="email" type="email" placeholder="email address" name="email" required>
+                    </label>
+                    <label id="number-label">Age
+                        <input id="number" type="number" placeholder="0" min="1" max="100">
+                    </label>
+
+
+                    <!-- RELATIONSHIP DROPDOWN -->
+                    <h2>Describe yourself</h2>
+
+                    <select id="dropdown">
+                        <option value="recruiter">Prefer not to say</option>
+                        <option value="recruiter">Recruiter</option>
+                        <option value="family">Family</option>
+                        <option value="friend">Friend</option>
+                        <option value="enemy">Enemy</option>
+                        <option value="other">Other</option>
+                    </select>
+
+
+
+                    <!-- COLORS RADIOBUTTONS -->
+                    <h2>Which color pairing is your favorite?</h2>
+
+                    <fieldset>
+                        <label id="red-label">
+                            <input name="color" id="red-cyan" type="radio" value="color">Red-Cyan
+                        </label>
+                        <label id="blue-label">
+                            <input name="color" id="green-magenta" type="radio" value="color">Green-Magenta
+                        </label>
+                        <label id="green-label">
+                            <input name="color" id="blue-yellow" type="radio" value="color">Blue-Yellow
+                        </label>
+                        <label id="yellow-label">
+                            <input name="color" id="red-green" type="radio" value="color">Red-Green
+                        </label>
+                        <label id="orange-label">
+                            <input name="color" id="yellow-purple" type="radio" value="color">Yellow-Purple
+                        </label>
+                        <label id="orange-label">
+                            <input name="color" id="orange-blue" type="radio" value="color">Orange-Blue
+                        </label>
+                    </fieldset>
+
+
+                    <!-- CHECKBOXES -->
+                    <h2>How do these colors make you feel(check all that apply)</h2>
+                    <label id="green-label">
+                        <input name="color" id="green" type="checkbox" value="feeling">Happy
+                    </label>
+                    <label id="yellow-label">
+                        <input name="color" id="yellow" type="checkbox" value="feeling">Sad
+                    </label>
+                    <label id="orange-label">
+                        <input name="color" id="orange" type="checkbox" value="feeling">Confused
+                    </label>
+                    <label id="orange-label">
+                        <input name="color" id="orange" type="checkbox" value="feeling">Frustrated
+                    </label>
+                    <label id="orange-label">
+                        <input name="color" id="orange" type="checkbox" value="feeling">Indifferent
+                    </label>
+
+                    <!-- COMMENTS -->
+                    <h2>Comments:</h2>
+                    <textarea id="comments"></textarea>
+
+                    <!-- SUBMIT -->
+                    <button id="submit" type="submit">Submit</button>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="js/script.js"></script>
+
+</html>
